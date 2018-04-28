@@ -5,120 +5,218 @@
 
 <style>
 .portfolio{
-width:70%;
-margin:auto
-}
+	width 20%;
+	margin:auto;
+	}
 h1{
-text-align:center
+	text-align:center
 }
 h2{
-text-align:center
+	text-align:center
 }
 .nav{
 
-font-style: normal;
-font-weight: 400;
-font-size:20pt;
-width:95%;
-height:100px;
-margin-left:2%;
-margin-right:3%;
-border-style:solid;
-position:fixed;
-text-align:center; 
-padding:3% 2% 5% 2%;
-background-color:darkorchid;
-border-radius:10px;
+	font-style: normal;
+	font-weight: 400;
+	font-size:20pt;
+	width:95%;
+	height:100px;
+	margin-left:2%;
+	margin-right:3%;
+	border-style:solid;
+	position:fixed;
+	text-align:center; 
+	padding:3% 2% 5% 2%;
+	background-color:darkorchid;
+	border-radius:10px;
+	z-index:3;
 }
 .profile{
-border-color:darkorchid;
-width:180px; 
-height:320px; 
-float:right; 
-margin-right:15%;
+	border-color:darkorchid;
+	width:180px; 
+	height:320px; 
+	
+	
 }
 .jump{
-padding:5px
+	padding:5px
 }
 .jump:hover{
-border-radius:0px 10px 0px 10px;
-background-color:lavender;
+	border-radius:0px 10px 0px 10px;
+	background-color:lavender;
 
 
 }
 body{
-background-color:#plum;
+	background-color:#plum;
 }
 p{
-margin:auto; 
-padding:5% 10% 10% 10%; 
-font-size:20pt; 
-font-weight:300
+	margin:auto; 
+	padding:5% 10% 10% 10%; 
+	font-size:13pt; 
+	font-weight:300
 
 }
+ul{
+	margin:auto;
+	
+}
+img{
+	z-index:-1;
+}
+
+.invis{
+display:none
+}
 </style>
+<script>
+function display(proj) {
+    var x = document.getElementsByClassName("invis");
+    var change=document.getElementById(proj);
+    var i;
+    
+    for(i=0;i<x.length;i++)
+    x[i].style.display = "none";
+    
+    change.style.display="block";
+    
+}
+</script>
 <link rel="icon" href="logo.png">
 <title>Max Raphael Inciong's Portfolio</title>
 </head>
 <body>
 <div class="container-fluid">
 <div class="row nav">
-<a href="#about" style="color:black"><div class="col-xs-3 jump">About</div></a>
-<a href="#portfolio" style="color:black"><div class="col-xs-3 jump">Portfolio</div></a>
-<a href="#contact" style="color:black"><div class="col-xs-3 jump">Contact</div></a>
-<a href="#about"><div class="col-xs-3" style="margin:auto; padding:0px;">
-<img src="logo.png" height="75px">
+<a href="#about" style="color:black"><div class="col-xs-4 jump">About</div></a>
+<a href="#portfolio" style="color:black"><div class="col-xs-4 jump">Portfolio</div></a>
+<a href="#contact" style="color:black"><div class="col-xs-4 jump">Contact</div></a>
+
+
 </div></a>
 </div>
-<a name="about">&nbsp</a>
+<a name="about">&nbsp </a>
 <div class="row" style="margin-top:10%">
 	
 	<h1>About Max Raphael Inciong</h1>
-	
+	<div class="col-xs-1"></div>
+	<div class="col-xs-8">
+	<div>
+	Hello there, and welcome to my portfolio page. My name is Max, and I am an aspiring Software Engineer and Web Developer.
+	I have graduated from the City College of New York on December of 2017.
+	With regards to my programming skill, I am proficient in Object oriented programming, most notably C++ and Python, though I do have experience in Java
+	I am also proficient in using Web Development technologies and the MVC architectural patter for creating websites.
+	I can use HTML, CSS, Javascript, and I can combine it with Flask, PostgreSQL and Jinja2 to create templates and functionality.
+	I have explored many fields of computer science including but not limited to:<br><br>
+	<ul>
+	<li>Data Structures</li>
+	<li>Algorithms</li>
+	<li>Artificial Intelligence</li>
+	<li>Database Systems</li>
+	<li>Parallel Processing</li>
+	<li>Computer Security</li>
+	<li>Computer Graphics</li>
+	<li>Operating Systems</li>
+	</ul>
+	</div>
+	</div>
+	<div class="col-xs-2">
 	<img src="profile.jpg" class="profile">
-	<p>
-	
-	Knowledge in Artificial Intelligence, Databases, and Parallel Processing<br><br>
-	Experience in event organizing, Moderating capabilities Leadership skills<br><br>
-	Senior at City College of New York. Aspiring Software Engineer/Web Developer
-	</p>
+	</div>
+	<div class="col-xs-1"></div>
 </div>
-<a name="portfolio">&nbsp</a>
+<a name="portfolio"> &nbsp </a>
 <div  class="row"  style="margin-top:10%; background-color:thistle">
 	
 	
 	<h1>Portfolio</h1>
-	
-	<div>
+	<div class="row">
+	<div class="col-xs-1"></div>
+		<div class="col-xs-4">
+		<button class="btn" onclick="display('elibrary')">E-Library</button>
+		<button class="btn" onclick="display('mmp')">Magical Music Player</button>
+		<button class="btn" onclick="display('stockmarket')">Stock Market Quote GUI</button>
+		</div>
+	</div>
+	<br>
+	<div id="elibrary" class="row invis" >
 	<h2>
 	E-Library - Library for E-books.<br>
-	Written in Java<br>
+	
 	</h2>
-	<img src="elibrary.PNG" class="portfolio img-responsive">
+	<div class="col-xs-1"></div>
+	<div class="col-xs-5">
+	<img src="elibrary.PNG" class="portfolio img-responsive"><br>
 	<img src="alice.PNG" class="portfolio img-responsive">
 	</div>
 	
-	<div>
+	
+	<div class="col-xs-5">
+	This application was created to be similar to a library in which a user could borrow books in PDF form.
+	It allowed for the study of database fundamentals. However, this program did not use SQL or and query based language
+	to do database work. It instead used files to keep track of Users, books, and related attributes one might find in a database.
+	The system also had a privilege system. In order to gain points to borrow more books, users had to submit more original books,
+	which then had to be approved by a super user. A super user was similar to a user, but  with extra privileges.
+	<br><br>
+	I was responsible for creating the Graphic User Interface, as well as creating the framework that the database was based on.
+	I utilized Java in order to add functionality to each of the buttons, such as adding an e-book to a user's favourite books,
+	logging down a user's read history, or submitting a new book for approval. I also set up a system in which super users could
+	evenly split up the work of books being submitted for approval and point allocation given a multitude of submitted books.
+	
+	</div>
+	<div class="col-xs-1"></div>
+	</div>
+	
+	<div id="mmp" class="row invis">
 	<h2>
 	Magical Music Player - Music Player with playlist capabilities.<br>
-	Written in C++ and QT<br>
+	
 	</h2>
+	<div class="col-xs-1"></div>
+	<div class="col-xs-5">
 	<img src="MMP.PNG" class="portfolio img-responsive">
 	</div>
-	<div>
+		
+	<div class="col-xs-5">
+	Known as QTunes, this project was my introduction to QT and openGL. It was supposed to be an MP3 Player akin to iTunes
+	in which people could create custom playlists to listen to while browsing the cover arts of the album art. My group decided to make
+	the entire application customizable. Every widget on the application, from the playlist, to the list of total songs,
+	to the album cover flow could be placed anywhere else, or toggled off. My main responsibility was creating the cover flow.
+	The application added album covers to the coverflow list when songs were added to a playlist, and one could cycle through the covers
+	using the arrow keys.
+	</div>
+	<div class="col-xs-1"></div>
+	
+	</div>
+	
+	<div id="stockmarket" class="row invis" >
 	<h2>
 	Stock Market GUI - APP to track down Stock Market Quotes. <br>
-	Written in Python and SQL<br>
+	
 	</h2>
+	<div class="col-xs-1"></div>
+	<div class="col-xs-5">
 	<img src="stockmarket.PNG" class="portfolio img-responsive">
 	</div>
+		
+	<div class="col-xs-5">
+	This program was meant to simulate a stock market exchange. The application was a graphic user interface
+	that allowed someone to search for a stock and keep track of what was bought and sold. This was originally meant to be
+	a five person project, but three of the five were unable to do any work, so this project alos shows how much I'm capable of doing
+	with increased pressure. I was in charge of connecting to the database, creating the queries, and making the GUI using my limited knowledge of
+	python at the time.
+	</div>
+	<div class="col-xs-1"></div>
+	
+	</div>
 </div>
-<a name="contact">&nbsp</a>
+<a name="contact">&nbsp </a>
 <div  class="row" style="margin-top:10%">
 	
 	<h1>Contact</h1>
 	<p>
-	Email: mincion000@citymail.cuny.edu<br>
+	Email: maxraphael_inciong@yahoo.com
+	
 	
 	</p>
 </div>
